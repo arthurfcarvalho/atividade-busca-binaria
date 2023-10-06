@@ -25,6 +25,7 @@ vector<string> buscaBinaria(vector<string> nomes, int qtdNomes, string letras){
         if (nome.substr(0, letras.size()).compare(letras) == 0){ // verificando se o nome começa com o valor informado
             resultado.push_back(nomes[m]);
             nomes.erase(nomes.begin() + m); // apagando o valor que foi inserido
+            e -= 1;
         }
         else if(nome.substr(0, letras.size()).compare(letras) > 0){ // se o nome for maior que o valor informado, diminui o fim
             e = m - 1;
@@ -50,7 +51,6 @@ int main() {
 
     if(!arquivo.is_open()){
         cout << "Erro ao ler arquivo! Verifique se ele está no diretório correto." << endl;
-        return 1;
     }
 
     vector<string> nomes;

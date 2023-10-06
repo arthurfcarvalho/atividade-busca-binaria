@@ -22,7 +22,7 @@ vector<string> buscaBinaria(vector<string> nomes, int qtdNomes, string letras){
         string nome;
         for(char c : nomes[m]) nome += toupper(c); // transformando o nome em uppercase
         // tambem poderia usar nome.substr(...) == letras
-        if (nome.substr(0, letras.size()).compare(letras) == 0){ // verificando se o nome começa com o valor informado
+        if (nome.substr(0, letras.size()).compare(letras) == 0){ // verificando se o nome comeÃ§a com o valor informado
             resultado.push_back(nomes[m]);
             nomes.erase(nomes.begin() + m); // apagando o valor que foi inserido
         }
@@ -49,7 +49,8 @@ int main() {
     fstream arquivo("nomes.txt", fstream::in);
 
     if(!arquivo.is_open()){
-        cout << "Erro ao ler arquivo! Verifique se ele está no diretório correto." << endl;
+        cout << "Erro ao ler arquivo! Verifique se ele estÃ¡ no diretÃ³rio correto." << endl;
+        return 1;
     }
 
     vector<string> nomes;
